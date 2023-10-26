@@ -1,0 +1,71 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg, Vcl.Buttons;
+
+type
+  TForm1 = class(TForm)
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    Label1: TLabel;
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    procedure Image2Click(Sender: TObject);
+    procedure Image3Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
+    procedure Image5Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+uses unit2,unit3,unit4,unit5;
+
+
+procedure TForm1.Image2Click(Sender: TObject);
+begin
+form1.hide;
+form2.show;
+end;
+
+procedure TForm1.Image3Click(Sender: TObject);
+begin
+form1.hide;
+form3.show;
+end;
+
+procedure TForm1.Image4Click(Sender: TObject);
+begin
+form1.hide;
+form4.show;
+end;
+
+procedure TForm1.Image5Click(Sender: TObject);
+begin
+form1.hide;
+form5.show;
+end;
+
+procedure TForm1.N2Click(Sender: TObject);
+begin
+showmessage('Игра Как стать миллионером? - это конкурс викторина, в котором участники должны правильно ответить на ряд вопросов с несколькими вариантами ответов.'+#13+' Всего 10 вопросов, каждый вопрос стоит определенной суммы денег, участники не имеют никаких временных ограничений для предоставления ответа.');
+end;
+
+end.

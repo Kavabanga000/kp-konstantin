@@ -1,0 +1,70 @@
+unit Unit6;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm6 = class(TForm)
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
+    Label30: TLabel;
+    Timer1: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+uses unit1,unit2,unit3,unit4,unit5;
+
+procedure TForm6.FormCreate(Sender: TObject);
+begin
+ Timer1.Interval := 400;
+Timer1.Enabled := True;
+end;
+
+procedure TForm6.Timer1Timer(Sender: TObject);
+begin
+label15.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label16.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label17.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label18.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label19.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label20.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label21.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label22.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label23.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label24.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label25.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label26.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label27.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label28.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label29.Font.Color := RGB(Random(256), Random(256), Random(256));
+Label30.Font.Color := RGB(Random(256), Random(256), Random(256));
+end;
+
+end.

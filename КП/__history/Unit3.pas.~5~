@@ -1,0 +1,104 @@
+unit Unit3;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm3 = class(TForm)
+    RadioGroup1: TRadioGroup;
+    RadioGroup2: TRadioGroup;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure RadioGroup1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+uses unit1,unit2,unit4,unit5;
+
+procedure TForm3.Button1Click(Sender: TObject);
+begin
+begin
+if (RadioGroup2.ItemIndex>-1) and (not Eof(f)) then begin
+if RadioGroup2.ItemIndex = Nvern-1 then ball:=ball+1;
+RadioGroup2.Items.Clear;
+Repeat
+if (s[1]='-') then begin
+delete(s,1,1);
+RadioGroup2.Caption:=s;
+end
+else if s[1]='*' then begin
+delete(s,1,1);
+Nvern:=StrToInt(s);
+end
+else RadioGroup2.Items.Add(s);
+readln(f,s);
+until (s[1]='-') or (Eof(f));
+end
+Else if Eof(f) then begin
+delete(s,1,1);
+Nvern:=StrToInt(s);
+if RadioGroup2.ItemIndex = Nvern-1 then ball:=(ball+1)*100000;
+Label1.Caption:=IntToStr(ball);
+CloseFile(f);
+Button1.Enabled:=False;
+end;
+end;
+begin
+  if ball=1 then label4.caption:='100'
+ else if ball=2 then label4.caption:='1000'
+ else if ball=3 then label4.caption:='1500'
+  else if ball=4 then label4.caption:='3000'
+   else if ball=5 then label4.caption:='10000'
+    else if ball=6 then label4.caption:='15000'
+     else if ball=7 then label4.caption:='30000'
+      else if ball=8 then label4.caption:='100000'
+       else if ball=9 then label4.caption:='300000'
+         else if ball=10 then label4.caption:='1000000'
+end;
+end;
+
+procedure TForm3.RadioGroup1Click(Sender: TObject);
+begin
+RadioGroup1.Enabled:=false; //
+RadioGroup2.Enabled:=true;
+Button1.Enabled:=true;
+case RadioGroup1.ItemIndex of
+0: AssignFile( f ,'C:\Users\kostet\Desktop\аип\кп аип\4.txt');
+1: AssignFile( f ,'C:\Users\kostet\Desktop\аип\кп аип\5.txt');
+2: AssignFile( f ,'C:\Users\kostet\Desktop\аип\кп аип\6.txt');
+end;
+reset(f);
+readln(f,s);
+ball:=0;
+repeat
+if (s[1]='-') then begin
+delete(s,1,1);
+RadioGroup2.Caption:=s;
+end
+else if s[1]='*' then begin
+delete(s,1,1);
+Nvern:=StrToInt(s);
+end
+
+else RadioGroup2.Items.Add(s);
+readln(f,s);
+until (s[1]='-') or (Eof(f));
+end;
+
+end.
